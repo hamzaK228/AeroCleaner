@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero Cleaner | Smart Rooftop Urban Air Purification</title>
+    <meta name="description" content="Aero Cleaner - 100% solar-powered, rooftop air purification systems designed to capture and eliminate urban smog in Central Asian cities.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Aero Cleaner | Take a Deep Breath">
+    <meta property="og:description" content="100% solar-powered rooftop air purification systems cleaning the air in Central Asian cities.">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Atmospheric Overlay -->
+    <div id="atmosphericOverlay"></div>
+
+    <!-- Ambient Ecological & Smog Background System -->
+    <div class="ambient-bg-system">
+        <div class="ambient-blob blob-smog"></div>
+        <div class="ambient-blob blob-eco"></div>
+        <div class="ambient-blob blob-air"></div>
+        <div class="ambient-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-tracker" id="scrollTracker"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            aero cleaner<span class="dot">.</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">home</a></li>
+            <li><a href="#crisis">the crisis</a></li>
+            <li><a href="#problems">consequences</a></li>
+            <li><a href="#innovation">solution</a></li>
+            <li><a href="#timeline">how it works</a></li>
+            <li><a href="#comparison">impact</a></li>
+            <li><a href="#business">business</a></li>
+            <li><a href="#funding">partnership</a></li>
+        </ul>
+        <a href="#funding" class="btn btn-primary" id="navBtn" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">Invest in Pure Air</a>
+    </nav>
+
+    <!-- Slide 1: Hero Section -->
+    <header class="hero" id="hero">
+        <!-- Canvas is injected here by JS -->
+        
+        <div class="hero-content">
+            <h1 class="reveal"><span class="highlight">aero cleaner</span><span class="dot">.</span></h1>
+            <p class="reveal" style="transition-delay: 150ms;">take a deep breath.</p>
+            <div class="hero-btn-group reveal" style="transition-delay: 300ms;">
+                <a href="#innovation" class="btn btn-primary">explore the unit</a>
+                <a href="#crisis" class="btn btn-secondary">view air crisis</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>scroll</span>
+            <span class="mouse"></span>
+        </div>
+    </header>
+
+    <!-- Slide 2: Cities in Crisis -->
+    <section class="section" id="crisis">
+        <div class="container">
+            <span class="section-tag">Urban Smog Crisis</span>
+            <h2 class="section-title reveal">the air we breathe<span style="color: var(--color-crimson)">.</span></h2>
+            <p class="section-subtitle reveal" style="transition-delay: 100ms;">
+                Smog represents a major environmental threat across Central Asia. Heavy smog traps toxic emissions close to the ground, leading to severe health complications and reduced quality of life.
+            </p>
+
+            <!-- Sensory Air Simulator -->
+            <div class="sensory-panel reveal" style="transition-delay: 150ms;">
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Sensory Air Simulator</h3>
+                <div class="breathing-core-wrapper">
+                    <div class="sensory-breathing-circle" id="breathingCircle"></div>
+                    <div class="breathing-ring"></div>
+                </div>
+                <div class="aqi-slider-container">
+                    <label for="aqiSlider" style="display:block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">Adjust Air Quality Index (AQI): <span id="aqiValueDisplay" style="color:var(--color-cyan); font-weight:700;">20</span></label>
+                    <input type="range" id="aqiSlider" class="aqi-slider" min="10" max="300" value="20">
+                </div>
+                <p id="diagnosticText">Fresh Air: Deep, slow, healthy breathing.</p>
+            </div>
+
+            <div class="grid-3" style="margin-top: 3rem;">
+                <!-- Bishkek Card -->
+                <div class="glass-panel city-card reveal">
+                    <span class="city-badge">Critical Pollution</span>
+                    <div class="city-header">
+                        <h3 class="city-name">Bishkek</h3>
+                        <div class="city-aqi-dial" id="aqiBishkek">
+                            <span class="val">0</span>
+                            <span class="lbl">aqi</span>
+                        </div>
+                    </div>
+                    <p>Trapped in a winter smog valley, particulate concentrations routinely spike to extreme hazardous levels due to residential coal heating.</p>
+                </div>
+
+                <!-- Almaty Card -->
+                <div class="glass-panel city-card reveal" style="transition-delay: 100ms;">
+                    <span class="city-badge">Hazardous Smog</span>
+                    <div class="city-header">
+                        <h3 class="city-name">Almaty</h3>
+                        <div class="city-aqi-dial" id="aqiAlmaty">
+                            <span class="val">0</span>
+                            <span class="lbl">aqi</span>
+                        </div>
+                    </div>
+                    <p>Enclosed by mountains, thermal inversion traps vehicle emissions and coal power plant exhausts directly over residential sectors.</p>
+                </div>
+
+                <!-- Astana Card -->
+                <div class="glass-panel city-card reveal" style="transition-delay: 200ms;">
+                    <span class="city-badge warning">Unhealthy</span>
+                    <div class="city-header">
+                        <h3 class="city-name">Astana</h3>
+                        <div class="city-aqi-dial warning" id="aqiAstana">
+                            <span class="val">0</span>
+                            <span class="lbl">aqi</span>
+                        </div>
+                    </div>
+                    <p>Harsh winter conditions necessitate continuous coal heating, forming a thick dome of ash and fine sulfur particulates over the city.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Problems Grid -->
+    <section class="section" id="problems" style="background: rgba(255, 65, 108, 0.015);">
+        <div class="container">
+            <span class="section-tag">Consequences of Smog</span>
+            <h2 class="section-title reveal">air pollution effects<span style="color: var(--color-crimson)">.</span></h2>
+            <p class="section-subtitle reveal" style="transition-delay: 100ms;">
+                Smog does not just look bad—it causes a cascade of biological, ecological, and economic emergencies that threaten the future of our metropolitan centers.
+            </p>
+
+            <div class="grid-3">
+                <div class="glass-panel problem-card reveal stagger-1">
+                    <div class="problem-icon">🫁</div>
+                    <h3>Severe Health Risks</h3>
+                    <p>Causes chronic breathing issues, asthma flares, lung cancer, and cardiovascular diseases, heavily impacting children and the elderly.</p>
+                </div>
+
+                <div class="glass-panel problem-card reveal stagger-2">
+                    <div class="problem-icon">🌍</div>
+                    <h3>Accelerating Climate</h3>
+                    <p>Suspended carbon aerosol particles absorb solar radiation, exacerbating localized urban heat islands and global climate anomalies.</p>
+                </div>
+
+                <div class="glass-panel problem-card reveal stagger-3">
+                    <div class="problem-icon">🌿</div>
+                    <h3>Ecosystem Damage</h3>
+                    <p>Particulates settle on leaves, blocking photosynthesis, reducing soil fertility, and poisoning vital plant and animal habitats.</p>
+                </div>
+
+                <div class="glass-panel problem-card reveal stagger-1">
+                    <div class="problem-icon">🌧️</div>
+                    <h3>Acid Precipitation</h3>
+                    <p>Sulfur and nitrogen oxides dissolve into rain, damaging forests, acidifying water supplies, and corroding urban structures.</p>
+                </div>
+
+                <div class="glass-panel problem-card reveal stagger-2">
+                    <div class="problem-icon">👁️</div>
+                    <h3>Reduced Visibility</h3>
+                    <p>Dense aerosol particles scatter light, drastically reducing street visibility, which causes traffic delays and increases serious accidents.</p>
+                </div>
+
+                <div class="glass-panel problem-card reveal stagger-3">
+                    <div class="problem-icon">💸</div>
+                    <h3>Economic Drain</h3>
+                    <p>Leads to billions in excess healthcare expenditure, massive crop yield reductions, and decreased workforce labor productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4 & 5: Solution & Unit Showcase -->
+    <section class="section" id="innovation">
+        <div class="container" style="max-width: 1420px; width: 95%;">
+            <div class="grid-2" style="grid-template-columns: 1fr 1.25fr; gap: 5rem; align-items: start;">
+                <div class="reveal">
+                    <span class="section-tag section-tag-oxygen">Our Innovation</span>
+                    <h2 class="section-title">meet the aero <span style="color: var(--color-cyan)">unit.</span></h2>
+                    <p>
+                        Aero Cleaner targets urban pollution at its peak concentration zones: on metropolitan rooftops. By capturing dirty air directly from high-altitude flows, it keeps toxic smog from sinking into pedestrian zones.
+                    </p>
+
+                    <ul class="solution-highlights">
+                        <li class="solution-highlight-item reveal stagger-1">
+                            <div class="solution-icon-box">🏢</div>
+                            <div>
+                                <h4>High-Altitude Purification</h4>
+                                <p>Captures smog precisely where warm rising thermal currents carry it, stopping dispersion into street canyons.</p>
+                            </div>
+                        </li>
+                        <li class="solution-highlight-item reveal stagger-2">
+                            <div class="solution-icon-box">🛡️</div>
+                            <div>
+                                <h4>PM2.5 Target Filtration</h4>
+                                <p>Multi-barrier system specifically engineered to isolate heavy metals, soot, and toxic chemical particulates.</p>
+                            </div>
+                        </li>
+                        <li class="solution-highlight-item reveal stagger-3">
+                            <div class="solution-icon-box">☀️</div>
+                            <div>
+                                <h4>100% Eco-Friendly Autonomy</h4>
+                                <p>Equipped with smart solar tracking grids, requiring zero external grid connectivity or carbon footprint.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Product Configurator Tabs -->
+                    <div class="product-configurator reveal" style="transition-delay: 200ms; margin-top: 3rem;">
+                        <div class="product-tabs" id="productTabs">
+                            <div class="product-tab" data-model="model-r">Model R</div>
+                            <div class="product-tab active" data-model="model-x">Model X</div>
+                            <div class="product-tab" data-model="model-g">Model G</div>
+                        </div>
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <div class="val" id="specCapacity">6,000</div>
+                                <div class="lbl">Capacity (m³/h)</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="val" id="specCoverage">3</div>
+                                <div class="lbl">City Blocks</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="val" id="specSolar">40</div>
+                                <div class="lbl">Solar Area (m²)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Showcase with Interactive Hotspots -->
+                <div class="product-showcase-container reveal" style="transition-delay: 200ms;">
+                    <div class="exploded-controls" style="text-align: center; margin-bottom: 1.5rem;">
+                        <button class="btn btn-secondary" id="btnExplode" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
+                            <span style="margin-right: 0.5rem;">⚡</span> Disassemble Core
+                        </button>
+                    </div>
+                    
+                    <div class="product-frame" id="productFrame">
+                        <!-- Real-time WebGL Canvas -->
+                        <canvas id="webgl-canvas" style="width: 100%; height: 650px; display: block; border-radius: 2rem;"></canvas>
+                        
+                        
+                        <!-- Hotspot 1: Solar Panels -->
+                        <div class="hotspot hotspot-solar" data-id="solar">
+                            <div class="hotspot-tooltip">
+                                <h4><span>☀️</span> Solar Grid Array</h4>
+                                <p>Integrated multi-angle solar cell cluster providing 100% autonomous energy generation and grid independence.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 2: Suction Fans -->
+                        <div class="hotspot hotspot-suction" data-id="suction">
+                            <div class="hotspot-tooltip">
+                                <h4><span>🌀</span> High-Pressure Intake</h4>
+                                <p>A robust industrial intake fan drawing up to 6,000 cubic meters per hour of polluted urban air flows.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 3: Filters -->
+                        <div class="hotspot hotspot-filter" data-id="filter">
+                            <div class="hotspot-tooltip">
+                                <h4><span>🛡️</span> PM2.5 Core Barrier</h4>
+                                <p>Multi-barrier HEPA and activated carbon filtration layer that traps soot, toxins, and micron-sized aerosol dust.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 4: Ionizer -->
+                        <div class="hotspot hotspot-ionizer" data-id="ionizer">
+                            <div class="hotspot-tooltip">
+                                <h4><span>⚡</span> Ion Catalyst Module</h4>
+                                <p>Advanced electrostatic ionization chamber that aggregates microscopic soot particles for total eradication.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: How It Works Interactive Timeline -->
+    <section class="section" id="timeline" style="background: rgba(0, 242, 254, 0.01);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <span class="section-tag section-tag-oxygen">System Mechanics</span>
+                <h2 class="section-title reveal" style="margin: 0 auto;">how it cleans the air<span style="color: var(--color-cyan)">.</span></h2>
+            </div>
+
+            <div class="steps-wrapper">
+                <div class="steps-line"></div>
+                <div class="steps-line-progress" id="timelineProgress"></div>
+
+                <div class="timeline-grid">
+                    <!-- Step 1 -->
+                    <div class="step-node active reveal" data-step="1">
+                        <div class="step-circle">01</div>
+                        <h3>Active Suction</h3>
+                        <p>High-capacity variable fans pull surrounding urban smog into the unit at speed.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-node reveal" data-step="2" style="transition-delay: 100ms;">
+                        <div class="step-circle">02</div>
+                        <h3>Multi-Stage Filtration</h3>
+                        <p>Air passes through coarse pre-filters and advanced carbon filters, trapping PM2.5 particles and gases.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-node reveal" data-step="3" style="transition-delay: 200ms;">
+                        <div class="step-circle">03</div>
+                        <h3>Deep Ionization</h3>
+                        <p>Micro-particles undergo electrostatic charge aggregation for advanced catalyst purging.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-node reveal" data-step="4" style="transition-delay: 300ms;">
+                        <div class="step-circle">04</div>
+                        <h3>100% Autonomy</h3>
+                        <p>Smart solar inverters handle all operations without grid drawing, ensuring carbon neutrality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Comparison Matrix -->
+    <section class="section" id="comparison">
+        <div class="container">
+            <span class="section-tag section-tag-solar">Market Comparison</span>
+            <h2 class="section-title reveal">impact evaluation matrix<span style="color: var(--color-amber)">.</span></h2>
+            <p class="section-subtitle reveal" style="transition-delay: 100ms;">
+                How does the Aero Cleaner rooftop system stack up against alternative methods of urban smog management?
+            </p>
+
+            <div class="matrix-container reveal" style="transition-delay: 200ms;">
+                <table class="comparison-matrix">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th style="color: var(--color-cyan); background: rgba(0, 242, 254, 0.05);">Aero Cleaner Unit</th>
+                            <th>Ground Towers</th>
+                            <th>Apartment Cleaners</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Land Footprint</strong></td>
+                            <td class="win">0 m² (r rooftop installations)</td>
+                            <td class="lose">High (occupies vital street space)</td>
+                            <td>0 m² (inside homes)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Energy Consumption</strong></td>
+                            <td class="win">100% Autonomous (integrated solar)</td>
+                            <td class="lose">Extremely High (city power grid)</td>
+                            <td class="lose">Average (household electricity drawing)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Clearing Scale (PM2.5)</strong></td>
+                            <td class="win">Metropolitan scale (upper wind flows)</td>
+                            <td class="lose">Very Local (around the tower only)</td>
+                            <td class="lose">Single Room (confined space only)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Installation Overhead</strong></td>
+                            <td class="win">Low (modular on existing roofs)</td>
+                            <td class="lose">High (civil construction, foundations)</td>
+                            <td>Zero (consumer plug-and-play)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Business Model -->
+    <section class="section" id="business" style="background: rgba(253, 160, 133, 0.01);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-tag section-tag-solar">Business Operations</span>
+                <h2 class="section-title reveal" style="margin: 0 auto;">our business model<span style="color: var(--color-amber)">.</span></h2>
+                <p class="section-subtitle reveal" style="margin: 1.5rem auto 0; transition-delay: 100ms;">
+                    A sustainable, high-yield revenue structure built on capital B2B installations paired with recurring operational service contracts.
+                </p>
+            </div>
+
+            <div class="biz-cards-container">
+                <!-- Card 1: Direct B2B -->
+                <div class="glass-panel biz-card sales reveal">
+                    <span class="biz-card-tag">Capital Sales</span>
+                    <h3>Direct B2B Sales</h3>
+                    <p class="desc">One-time purchase contracts for property developers, shopping malls, corporate buildings, and municipal administrative centers.</p>
+                    <ul class="biz-details-list">
+                        <li><i>✓</i> Direct integration into construction designs</li>
+                        <li><i>✓</i> Premium green building certification</li>
+                        <li><i>✓</i> Direct volume pricing scales</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Recurring Service -->
+                <div class="glass-panel biz-card subscription reveal" style="transition-delay: 150ms;">
+                    <span class="biz-card-tag">Recurring Revenue</span>
+                    <h3>Service Subscription</h3>
+                    <p class="desc">Continuous monthly operational support contracts providing remote telemetry monitoring, maintenance, and filter replacements.</p>
+                    <ul class="biz-details-list">
+                        <li><i>✓</i> Automated cellular smart telemetry</li>
+                        <li><i>✓</i> PM2.5 & HEPA filter replacements</li>
+                        <li><i>✓</i> Scheduled clean-air certificate audits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Funding & Ask CTA -->
+    <section class="section" id="funding">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <span class="section-tag section-tag-solar">Investment & Partnership</span>
+                    <h2 class="section-title">join the pure air movement<span style="color: var(--color-amber)">.</span></h2>
+                    
+                    <div class="funding-stat">
+                        <span class="val">$120,000</span>
+                        <p style="font-weight: 600; color: var(--text-primary);">Seed Round Funding Goal</p>
+                    </div>
+
+                    <p>We are seeking technology co-developers and seed investors to establish our pilot urban rooftop cleaning grid across Central Asian smog capitals.</p>
+                    
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-primary);">Allocation of Funds:</h4>
+                    <ul class="funding-use-list">
+                        <li>
+                            <span class="num">1</span>
+                            <p><strong>Constructing fully functional MVP:</strong> Assembling our first rugged field testing rooftop unit.</p>
+                        </li>
+                        <li>
+                            <span class="num">2</span>
+                            <p><strong>Supply chains:</strong> Sourcing high-capacity low-vibration fans, HEPA filters, and inverters.</p>
+                        </li>
+                        <li>
+                            <span class="num">3</span>
+                            <p><strong>Pilot Installations:</strong> Launching test cells on prominent structures in Bishkek and Almaty.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="glass-panel contact-form-panel reveal" style="transition-delay: 200ms; position: relative; overflow: hidden;">
+                    <h3>request partnership pack</h3>
+                    <p>Enter your credentials to download our investor deck and pilot program schedules.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="formName">Full Name</label>
+                            <input type="text" id="formName" class="form-input" placeholder="e.g. John Doe" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="formEmail">Email Address</label>
+                            <input type="email" id="formEmail" class="form-input" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formRole">Organization / Role</label>
+                            <input type="text" id="formRole" class="form-input" placeholder="e.g. Developer / Venture Fund" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent" id="submitBtn" style="width: 100%; margin-top: 1rem; position: relative;">
+                            Request Investor Access
+                        </button>
+                    </form>
+
+                    <!-- Success State (Playful Success State matching SKILL.md) -->
+                    <div class="success-overlay" id="successOverlay">
+                        <svg class="success-checkmark-svg" viewBox="0 0 52 52">
+                            <circle cx="26" cy="26" r="25" />
+                            <path d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                        </svg>
+                        <h3 style="color: var(--color-green);">Access Granted</h3>
+                        <p style="text-align: center; font-size: 0.95rem; margin-top: 0.5rem;">The Aero Cleaner Investor Package and technical specifications sheet are being dispatched to your email address.</p>
+                        <button class="btn btn-secondary" id="closeSuccessBtn" style="margin-top: 2rem;">Close Window</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                aero cleaner<span class="dot">.</span>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Aero Cleaner Inc. All rights reserved. Clean air in Central Asia.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js WebGL & OrbitControls CDN Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="./three-engine.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
