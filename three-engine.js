@@ -765,15 +765,6 @@ window.toggleExplodedCore = function(exploded) {
     }
 };
 
-function onResize() {
-    const canvas = document.getElementById('webgl-canvas');
-    if (!canvas || !renderer || !camera) return;
-
-    camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-}
 
 // Call onResize once stylesheet layout completes on full window load
 window.addEventListener('load', onResize);
