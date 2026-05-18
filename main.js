@@ -438,6 +438,12 @@ function initSensorySimulator() {
     const diagnosticText = document.getElementById('diagnosticText');
     const overlay = document.getElementById('atmosphericOverlay');
 
+    const blobSmog = document.querySelector('.blob-smog');
+    const blobEco = document.querySelector('.blob-eco');
+    const blobAir = document.querySelector('.blob-air');
+    const cleanPaths = document.querySelectorAll('.wind-clean');
+    const pollutedPaths = document.querySelectorAll('.wind-polluted');
+
     if (!slider) return;
 
     slider.addEventListener('input', (e) => {
@@ -453,7 +459,20 @@ function initSensorySimulator() {
         const duration = 5.5 - (severity * 4.3);
         breathingCircle.style.setProperty('--breathing-duration', `${duration.toFixed(1)}s`);
 
-        // 3. Adjust Sleek Data Indicators
+        // 3. Update Ambient Blobs dynamically for high-fidelity ecological feel
+        if (blobSmog) blobSmog.style.opacity = (severity * 0.75 + 0.05).toFixed(2);
+        if (blobEco) blobEco.style.opacity = ((1.0 - severity) * 0.65 + 0.05).toFixed(2);
+        if (blobAir) blobAir.style.opacity = ((1.0 - severity) * 0.50 + 0.05).toFixed(2);
+
+        // 4. Update Ambient Wind Currents (Oxygen vs Smog currents)
+        cleanPaths.forEach(path => {
+            path.style.opacity = ((1.0 - severity) * 0.85).toFixed(2);
+        });
+        pollutedPaths.forEach(path => {
+            path.style.opacity = (severity * 0.90).toFixed(2);
+        });
+
+        // 5. Adjust Sleek Data Indicators
         if (val < 50) {
             diagnosticText.textContent = 'Air Quality Optimal: Running in passive monitoring mode.';
             diagnosticText.style.color = 'var(--color-eco-light)';

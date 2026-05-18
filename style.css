@@ -2,9 +2,9 @@
 
 :root {
     /* Color Palette (Premium Organic Eco Dark Mode) */
-    --bg-deep: #030605;      /* Deep Forest Green-Black */
-    --bg-darker: #060b09;    /* Dark Forest Green */
-    --bg-lighter: #0c1410;   /* Light Forest Green Card */
+    --bg-deep: #020805;      /* Deep Forest Green-Black */
+    --bg-darker: #040d09;    /* Dark Forest Green */
+    --bg-lighter: #071510;   /* Light Forest Green Card */
     --glass-bg: rgba(255, 255, 255, 0.02);
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-border-hover: rgba(255, 255, 255, 0.15);
@@ -19,14 +19,14 @@
     --color-eco-main: #10b981; /* Emerald 500 */
     --color-eco-dark: #059669; /* Emerald 600 */
     
-    --color-cyan: var(--color-eco-main);
-    --color-amber: var(--color-eco-main);
-    --color-crimson: var(--color-eco-main);
-    --color-green: var(--color-eco-main);
+    --color-cyan: #06b6d4;     /* Crisp optimal cyan */
+    --color-amber: #ffb703;    /* Warning moderate amber */
+    --color-crimson: #ff416c;  /* Danger crimson */
+    --color-green: #10b981;    /* Ecological green */
     
     --grad-oxygen: linear-gradient(135deg, var(--color-eco-light) 0%, var(--color-eco-main) 100%);
-    --grad-solar: var(--grad-oxygen);
-    --grad-smog: linear-gradient(135deg, #111 0%, #222 100%);
+    --grad-solar: linear-gradient(135deg, #ffb703 0%, #fda085 100%);
+    --grad-smog: linear-gradient(135deg, #1f1d1a 0%, #3e3328 100%);
     
     /* Motion Tokens (Premium Archetype from SKILL.md) */
     --duration-quick: 150ms;
@@ -1457,4 +1457,96 @@ footer {
 
 #webgl-canvas:active {
     cursor: grabbing;
+}
+
+/* ============================================================
+   AMBIENT WIND AND SMOG SVG CURRENTS STYLING
+   ============================================================ */
+.ambient-wind-currents {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wind-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wind-path {
+    fill: none;
+    stroke-linecap: round;
+    opacity: 0;
+    transition: opacity 1s var(--ease-premium), stroke-width 1s;
+}
+
+/* Dasharray patterns simulating moving flows of breeze */
+.wind-clean {
+    stroke-dasharray: 240 600;
+    animation: flow-wind 16s linear infinite;
+}
+
+.wind-clean.wind-path-1 {
+    stroke: rgba(52, 211, 153, 0.45); /* bright emerald */
+    stroke-width: 3.5px;
+    animation-duration: 12s;
+}
+
+.wind-clean.wind-path-2 {
+    stroke: rgba(6, 182, 212, 0.45); /* bright cyan */
+    stroke-width: 2.5px;
+    animation-duration: 18s;
+    animation-delay: -3s;
+}
+
+.wind-clean.wind-path-3 {
+    stroke: rgba(16, 185, 129, 0.35);
+    stroke-width: 3px;
+    animation-duration: 22s;
+    animation-delay: -7s;
+}
+
+/* Heavy, sluggish, thick smog waves */
+.wind-polluted {
+    stroke-dasharray: 400 450;
+    animation: flow-wind-reverse 24s linear infinite;
+}
+
+.wind-polluted.smog-path-1 {
+    stroke: rgba(142, 115, 80, 0.6); /* thick dusty bronze */
+    stroke-width: 8px;
+    filter: blur(4px);
+    animation-duration: 26s;
+}
+
+.wind-polluted.smog-path-2 {
+    stroke: rgba(230, 140, 10, 0.4); /* warm sulfur smog */
+    stroke-width: 12px;
+    filter: blur(6px);
+    animation-duration: 34s;
+    animation-delay: -5s;
+}
+
+@keyframes flow-wind {
+    0% {
+        stroke-dashoffset: 840;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes flow-wind-reverse {
+    0% {
+        stroke-dashoffset: -850;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
