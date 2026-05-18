@@ -85,7 +85,11 @@ function init3D() {
     initSmogPlume();
     animate();
 
+    // Prevent zero-height canvas bug on mobile page load
+    onResize();
     window.addEventListener('resize', onResize);
+    setTimeout(onResize, 150);
+    setTimeout(onResize, 500);
 }
 
 /* ============================================================
@@ -760,5 +764,18 @@ window.toggleExplodedCore = function(exploded) {
         subExplodeTarget = 0;
     }
 };
+
+function onResize() {
+    const canvas = document.getElementById('webgl-canvas');
+    if (!canvas || !renderer || !camera) return;
+
+    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+}
+
+// Call onResize once stylesheet layout completes on full window load
+window.addEventListener('load', onResize);
 
 document.addEventListener('DOMContentLoaded', init3D);

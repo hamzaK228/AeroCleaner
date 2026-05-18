@@ -1459,6 +1459,15 @@ footer {
     cursor: grabbing;
 }
 
+@media (max-width: 768px) {
+    #webgl-canvas {
+        height: 380px !important;
+    }
+    .product-showcase-container {
+        padding: 0.5rem;
+    }
+}
+
 /* ============================================================
    AMBIENT WIND AND SMOG SVG CURRENTS STYLING
    ============================================================ */
