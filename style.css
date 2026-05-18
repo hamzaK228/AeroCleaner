@@ -690,6 +690,20 @@ nav.scrolled {
     color: var(--text-primary);
 }
 
+.product-configurator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .product-configurator-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+}
+
 /* Product Image Showcase with Engineering Hotspots */
 .product-showcase-container {
     position: relative;
@@ -1465,6 +1479,25 @@ footer {
     }
     .product-showcase-container {
         padding: 0.5rem;
+    }
+    .product-tabs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+    .product-tab {
+        flex: 1;
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .spec-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
     }
 }
 
